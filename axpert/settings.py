@@ -20,8 +20,8 @@ datalogger_conf = {
 }
 
 charger_conf = {
-    'float_voltage': 52.8,
-    'absorbtion_voltage': 58.4,
+    'float_voltage': 26.4,
+    'absorbtion_voltage': 29.2,
     'absorbtion_amps_threshold': 6.4,
     'charge_check_start': 11,
     'charge_check_end': 23
