@@ -335,21 +335,21 @@ def extract(args):
 if __name__ == '__main__':
     args = parse_args()
     log_level = logging.DEBUG if args['verbose'] else logging.INFO
-
+    logging.basicConfig(
+        format=logger_conf['format'],
+        filename='{}/{}'.format(root_dir, logger_conf['filename'])
+    )
+    log = logging.getLogger('godenerg')
+    log.setLevel(log_level)
+    log.info("Logging started")
+    
     if args['daemonize']:
         with daemon.DaemonContext() as daemon:
-            logging.basicConfig(
-                format=logger_conf['format'],
-                filename='{}/{}'.format(root_dir, logger_conf['filename'])
-            )
-            log = logging.getLogger('godenerg')
-            log.setLevel(log_level)
+            log.info("Entered Daemoncontext")
             while True:
                 run_as_daemon(daemon, args)
                 sleep(5)
     else:
-        log = logging.getLogger('godenerg')
-        log.setLevel(log_level)
         log.addHandler(logging.StreamHandler(sys.stdout))
         if 'extract' in args and args['extract']:
             extract(args)
