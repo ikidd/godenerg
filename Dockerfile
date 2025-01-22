@@ -11,7 +11,7 @@ WORKDIR /axpert
 COPY requirements.txt .
 RUN python3.9 -m pip install --no-cache-dir --upgrade \
     pip \
-    setuptools \
+    setuptools==58.2.0 \
     wheel
 RUN python3.9 -m pip install --no-cache-dir \
     -r requirements.txt
