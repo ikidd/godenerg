@@ -1,4 +1,4 @@
-APP_PATH = '/axpert/'
+APP_PATH = './'
 
 
 logger_conf = {
