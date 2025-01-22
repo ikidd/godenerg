@@ -1,4 +1,4 @@
-APP_PATH = '/home/pi/godenerg/'
+APP_PATH = '/axpert/'
 
 
 logger_conf = {
