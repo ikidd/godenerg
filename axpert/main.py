@@ -346,6 +346,7 @@ if __name__ == '__main__':
     
         
     if args['daemonize']:
+        log.debug("Entered Daemonize")
         with daemon.DaemonContext() as daemon:
             log.debug("Entered Daemoncontext")
             while True:
