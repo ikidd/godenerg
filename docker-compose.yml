@@ -2,8 +2,9 @@ services:
  godenerg:
   build: .
   volumes:
-    - /dev/hidraw0:/dev/hidraw0
     - ./axpert:/axpert
+  devices:
+    - /dev/hidraw0:/dev/hidraw0
   ports:
     - 8889:8889
     - 8890:8890
