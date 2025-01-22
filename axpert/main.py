@@ -336,7 +336,7 @@ if __name__ == '__main__':
     args = parse_args()
     log_level = logging.DEBUG if args['verbose'] else logging.INFO
 
-    if args['daemon']:
+    if args['daemonize']:
         with daemon.DaemonContext() as daemon:
             logging.basicConfig(
                 format=logger_conf['format'],
