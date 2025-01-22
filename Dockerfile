@@ -5,8 +5,8 @@ RUN apt-get update && apt-get install -y \
     libpq-dev \
     && rm -rf /var/lib/apt/lists/*
 
-RUN mkdir /code
-WORKDIR /code
+RUN mkdir /axpert
+WORKDIR /axpert
 
 COPY requirements.txt .
 RUN python3.9 -m pip install --no-cache-dir --upgrade \
@@ -15,8 +15,8 @@ RUN python3.9 -m pip install --no-cache-dir --upgrade \
     wheel
 RUN python3.9 -m pip install --no-cache-dir \
     -r requirements.txt
-COPY . .
 
-EXPOSE 5000
+EXPOSE 8889
+EXPOSE 8890
 
-CMD ["python3.9", "app.py"]
+CMD ["python3.9", "main.py", "--usb", "-d", "/dev/hidraw0", "--daemon"]
