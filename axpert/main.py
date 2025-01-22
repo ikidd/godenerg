@@ -343,8 +343,7 @@ if __name__ == '__main__':
     log.setLevel(log_level)
     log.addHandler(logging.StreamHandler(sys.stdout))
     log.debug("Logging started")
-    for arg in vars(args):
-        print arg, getattr(args, arg)
+    print(' '.join(f'{k}={v}' for k, v in vars(args).items()))
         
     if args['daemonize']:
         with daemon.DaemonContext() as daemon:
