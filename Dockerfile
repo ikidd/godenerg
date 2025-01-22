@@ -19,4 +19,4 @@ RUN python3.9 -m pip install --no-cache-dir \
 EXPOSE 8889
 EXPOSE 8890
 
-CMD ["python3.9", "main.py", "--usb", "-d", "/dev/hidraw0", "--status", "-f", "json"]
+CMD ["/bin/bash"]
