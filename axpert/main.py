@@ -341,6 +341,7 @@ if __name__ == '__main__':
     )
     log = logging.getLogger('godenerg')
     log.setLevel(log_level)
+    log.addHandler(logging.StreamHandler(sys.stdout))
     log.debug("Logging started")
     
     if args['daemonize']:
