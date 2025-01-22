@@ -347,10 +347,10 @@ if __name__ == '__main__':
         
     if args['daemonize']:
         log.debug("Entered Daemonize")
-        with daemon.DaemonContext() as context:
+        with daemon.DaemonContext():
             log.debug("Entered Daemoncontext")
             while True:
-                run_as_daemon(context, args)
+                run_as_daemon(daemon, args)
                 sleep(5)
     else:
         if 'extract' in args and args['extract']:
