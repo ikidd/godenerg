@@ -29,9 +29,9 @@ charger_conf = {
 
 weather_api_conf = {
     'enable': True,
-    'url': 'http://api.apixu.com/v1/forecast.json?'\
-           'key={APIXU_API_KEY}&q={LAT},{LNG}&days=4',
-    'lat': '39.5946187',
-    'lng': '2.9024177',
+    'url': 'http://api.weatherstack.com/current?'\
+           'access_key={APIXU_API_KEY}&query={LAT},{LNG}&forecast_days=4',
+    'lat': '53.916151',
+    'lng': '-115.239140',
     'api_key_file': APP_PATH + 'apixu_api_key.txt'
 }
