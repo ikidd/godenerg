@@ -341,11 +341,11 @@ if __name__ == '__main__':
     )
     log = logging.getLogger('godenerg')
     log.setLevel(log_level)
-    log.info("Logging started")
+    log.debug("Logging started")
     
     if args['daemonize']:
         with daemon.DaemonContext() as daemon:
-            log.info("Entered Daemoncontext")
+            log.debug("Entered Daemoncontext")
             while True:
                 run_as_daemon(daemon, args)
                 sleep(5)
