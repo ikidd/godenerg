@@ -1,5 +1,5 @@
 services:
-  name: godenerg
+ godenerg:
   build: .
   volumes:
     - /dev/hidraw0:/dev/hidraw0
