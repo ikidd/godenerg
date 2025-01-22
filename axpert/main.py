@@ -351,7 +351,6 @@ if __name__ == '__main__':
                 run_as_daemon(daemon, args)
                 sleep(5)
     else:
-        log.addHandler(logging.StreamHandler(sys.stdout))
         if 'extract' in args and args['extract']:
             extract(args)
         else:
