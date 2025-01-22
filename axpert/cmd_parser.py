@@ -191,6 +191,7 @@ def parse_args():
     )
 
     args = vars(parser.parse_args())
+    print(' '.join(f'{k}={v}' for k, v in vars(args).items()))
     return reduce(
         lambda response, fnx: fnx(args, response),
         compose_response_fnxs,
