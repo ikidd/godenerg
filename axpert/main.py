@@ -343,7 +343,7 @@ if __name__ == '__main__':
     log.setLevel(log_level)
     log.addHandler(logging.StreamHandler(sys.stdout))
     log.debug("Logging started")
-    log.debug args
+    log.debug args.message
     if args['daemonize']:
         with daemon.DaemonContext() as daemon:
             log.debug("Entered Daemoncontext")
