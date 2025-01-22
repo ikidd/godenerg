@@ -100,7 +100,7 @@ def parse_core_params(parser):
         help='Run as a daemon with a http server and a datalogger',
         default=False
     )
-    log.debug("Added 'daemonize' argument")
+
 
     parser.add_argument(
         '--verbose', dest='verbose', action='store_true',
